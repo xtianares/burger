@@ -1,5 +1,5 @@
-var mysql = require("mysql");
-var connection;
+let mysql = require("mysql"),
+    connection;
 
 // from MySQLHerokuDeploymentProcess.pdf
 if (process.env.JAWSDB_URL) {
