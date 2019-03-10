@@ -12,17 +12,21 @@ router.get("/burgers", function (req, res) {
     });
 });
 
-router.post("/create", function (req, res) {
-    burger.create(req.body.burger_name, function (data) {
-        res.redirect("/burgers");
+router.post("/api/create", function (req, res) {
+    burger.create(req.body.burgerName, function (data) {
+        res.status(200).end();
     });
 });
 
-router.put("/update/:id", function (req, res) {
+router.put("/api/update/:id", function (req, res) {
     burger.update(req.params.id, function (data) {
-        res.redirect("/burgers");
+        if(data.changedRows === 0){
+            return res.status(404).end();
+        }
+        res.status(200).end();
     });
 });
+
 
 //Export router for server.js use
 module.exports = router;

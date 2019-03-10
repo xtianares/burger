@@ -3,19 +3,19 @@ let orm = require('../config/orm.js');
 let burger = {
     // grab all burgers
     all: (cb) => {
-        orm.select('burger', function(res) {
+        orm.selectAll('burger', function(res) {
             cb(res);
         });
     },
     // add/create burger
     create: (burgerName, cb) => {
-        orm.insert('burger', 'burger_name', burgerName, function(res) {
+        orm.insertOne('burger', 'burger_name', burgerName, function(res) {
             cb(res);
         });
     },
     // update a burger
     update: (id, cb) => {
-        orm.update('burger', id, function(res) {
+        orm.updateOne('burger', id, function(res) {
             cb(res);
         });
     }
