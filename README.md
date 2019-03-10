@@ -9,9 +9,10 @@ To install the application locally, run the commands below in your terminal/bash
 
 ```
 git clone https://github.com/xtianares/burger.git
-cd friend-finder
+cd burger
 npm install
 ```
+
 ### Running Locally
 To start the local server run this command in your terminal/bash.
 
